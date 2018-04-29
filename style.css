@@ -1,0 +1,30 @@
+.timeDiv{
+    border: 1px solid #000;
+    width: 400px;
+    margin: auto;
+}
+
+.time-text{
+    font-size: 30px;
+    /*border: 2px solid black;*/
+    text-align:center;
+}
+
+.day-text{
+    text-align:center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#cnID {
+	text-align:center;
+}
+
+.Name {
+	margin: auto;
+	width: 400px;
+}
+
+h4 {
+	text-align: center;
+}
