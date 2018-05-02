@@ -8,16 +8,23 @@
                 <link type="text/css" rel="stylesheet" href="style.css">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+                
+                <link rel="stylesheet" href="calstyle.css" />
+                <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEULbUByeDHdDXRh9gDIn2alVPoReQywM&callback=initMap"
+                type="text/javascript">
+                </script>
+
         </head>
 
         <body>
-
         	<br>
                 <br>
                 <br>
                 <div class="row">
 	                <div class="col-sm-6">
-	                	<h3 class="clockTitle"> India (IST) </h3>
+	                	<h3 class="clockTitle"> India (IST - Timezone) </h3>
 		                <div class="timeDiv">
 		                        <div class="time-text">
 		                            <span id="hr">00</span>
@@ -36,9 +43,7 @@
 
 		                <div class="day-text">
 		                    <span id="date">00</span>
-		                    <!-- <span> : </span> -->
 		                    <span id="month">00</span>
-		                    <!-- <span> : </span> -->
 		                    <span id="year">00</span>
 		                    <span> | </span>
 		                    <span id="day">00</span>
@@ -46,7 +51,7 @@
 		                <br>
                 	</div>
                 	<div class="col-sm-6">
-                		<h3 class="clockTitle"> IST + 5:30 Hrs</h3>
+                		<h3 class="clockTitle"> Another Timezone</h3>
 		                <div class="timeDiv">
 		                        <div class="time-text">
 		                            <span id="hr2">00</span>
@@ -65,9 +70,7 @@
 
 		                <div class="day-text">
 		                    <span id="date2">00</span>
-		                    <!-- <span> : </span> -->
 		                    <span id="month2">00</span>
-		                    <!-- <span> : </span> -->
 		                    <span id="year2">00</span>
 		                    <span> | </span>
 		                    <span id="day2">00</span>
@@ -76,64 +79,42 @@
                 	</div>
                 </div>
 
-                <script type="text/javascript" src="script.js"></script>
 
                 <br>
-                <h2 id="locInfo"> Your Location </h2>
-                <br>
-                <div class="col-sm-4"></div>
-        	<div id="map" class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
 
-        	<script>
-        	  var map, infoWindow;
-        	  function initMap() {
-        	    map = new google.maps.Map(document.getElementById('map'), {
-        	      center: {lat: -34.397, lng: 150.644},
-        	      zoom: 14
-        	    });
-        	    infoWindow = new google.maps.InfoWindow;
+                <div class="row">
+                        <div class="col-sm-6">
+                        <h2 id="locInfo" style="text-align: center;"> Your Location </h2>
+                        </div>
+                        <div class="col-sm-6">
+                        <h2 style="text-align: center;"> Calendar </h2>
+                        </div>
+                </div>
 
-        	    // Try HTML5 geolocation.
-        	    if (navigator.geolocation) {
-        	      navigator.geolocation.getCurrentPosition(function(position) {
-        	        var pos = {
-        	          lat: position.coords.latitude,
-        	          lng: position.coords.longitude
-        	        };
+                <div class="col-sm-1"></div>    
 
-        	        infoWindow.setPosition(pos);
-        	        infoWindow.setContent('You are here!');
-        	        infoWindow.open(map);
-        	        map.setCenter(pos);
-        	      }, function() {
-        	        handleLocationError(true, infoWindow, map.getCenter());
-        	      });
-        	    } else {
-        	      // Browser doesn't support Geolocation
-        	      handleLocationError(false, infoWindow, map.getCenter());
-        	    }
-        	  }
+                <!-- MAP -->
+                <div id="map" class="col-sm-5"></div> 
 
-        	  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        	    infoWindow.setPosition(pos);
-        	    infoWindow.setContent(browserHasGeolocation ?
-        	                          'Error: The Geolocation service failed.' :
-        	                          'Error: Your browser doesn\'t support geolocation.');
-        	    infoWindow.open(map);
-        	  }
-        	</script>
-        	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEULbUByeDHdDXRh9gDIn2alVPoReQywM&callback=initMap"
-        	type="text/javascript">
-        	</script>
+                <div class="col-sm-1"></div>
+                
+                <!-- Calendar -->
+                <div class="container" class="col-sm-5">
 
-        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="controls">
+                        <p class="next label" onclick="nextMonth()"><i class="fa fa-arrow-right"></i></p>
+                        <p class="previous label" onclick="previousMonth()"><i class="fa fa-arrow-left"></i></p>
+                        <p id="current-month" class="label">January</p>
+                    </div>
 
+                    <div class="calendar" id="calendar">
+                    <!-- Calandar HTML output here -->
+                    </div>
 
-                <div class="Name" class="col-sm-4">
-                        <h4> Developed by Nalin Jain. </h4>
-                        <h4> Thanks for visiting. </h4>
                 </div>
                 
+                <script type="text/javascript" src="script.js"></script>
+                <script type="text/javascript" src="calendar.js"></script>
+
         </body>
 </html>

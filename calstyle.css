@@ -1,0 +1,80 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+}
+
+.container {
+    width: 700px;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    background: #eee;
+    padding: 20px;
+    border-radius: 3px;
+    text-align: left;
+    margin: 10px auto;
+}
+
+h1 {
+    font-weight: 300;
+    text-align: center;
+    margin: 40px auto;
+}
+.calendar {
+    display: block;
+}
+.calendar-day {
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 2px 8px;
+    width: 8.6599%;
+    line-height: auto;
+    margin: 1%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: solid 1px #fff;
+}
+.calendar-day:hover {
+    background: #eee;
+}
+.controls {
+    display: block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.today {
+    font-weight: bold;
+    color: #333;
+    border: solid 1px #333;
+}
+
+.label {
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    line-height: 2px;
+    margin: 1%;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    color: black;
+}
+.previous {
+    float: left;
+}
+.next {
+    float: right;
+}
+/* Quick Fix */
+
+.label i {
+    line-height: 0;
+}
